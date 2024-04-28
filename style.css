@@ -1,0 +1,141 @@
+
+main {
+  height: 100%;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.linha {
+  border:solid;
+  float: left;
+  height: 600px;
+}
+
+.container {
+  align-items: center;
+  text-align: center;
+  width: 400px;
+  color: black;
+  font-size: 35px;
+  margin: 67px;
+}
+
+.sorteado-tabela {
+  text-align: center;
+  align-items: center;
+}
+
+.sorteado {
+  font-size: 9rem;
+  color: white;
+  background: #248f36;
+}
+
+.sorteado-linha {
+  text-align: center;
+}
+
+.container-histórico {
+  text-align: center;
+  color: black;
+  font-size: 35px;
+  margin-left: 10px;
+}
+
+.histórico {
+  text-align: center;
+  align-items: center;
+  border-collapse: separate;
+  border-spacing: 100px 15px;
+}
+
+.histórico-titulo {
+  background: #248f36;
+  color:white;
+  text-align: center;
+  align-items: center;
+  border-spacing: 100px 15px;
+  padding-block:  40px;
+  padding-inline: 40px;
+  font-size: 5rem;
+}
+
+.histórico-linha {
+  padding-top: 10px;
+}
+
+.tabela {
+  color: #a6a8aa;
+  border-collapse: separate;
+  border-spacing: 100px 13px;
+}
+
+th {
+  font-size: 50px;
+  padding-block:  30px;
+  padding-inline: 40px;
+  color: black;
+  border-radius: 100%;
+  background: #a6a8aa;
+  align-items: center;
+}
+
+tr {
+  padding-top: 10px;
+}
+
+td {
+  text-align: center;
+}
+
+.bola {
+  background: #dce0e4;
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  padding-block:  5px;
+  padding-inline: 13px;
+  border-radius: 100%;
+}
+
+.bola-sorteada {
+  background: #248f36;
+  color: #fff;
+  text-align: center;
+  font-size: 50px;
+  padding-block:  5px;
+  padding-inline: 10px;
+  border-radius: 100%;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 30px;
+}
+
+input {
+
+  color: black;
+  text-align: center;
+  font-size: 1.5rem;
+  border: solid;
+  border-width: 1px;
+  border-radius: 0.8rem;
+  width: 285px;
+  padding-inline:  10px;
+
+}
+
+form button {
+  color: white;
+  font-size: 1rem;
+  border: none;
+  background-color: #676e74;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 10rem;
+  box-shadow: 676e74;
+  cursor: pointer;
+}
+
