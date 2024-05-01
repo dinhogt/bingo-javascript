@@ -2,47 +2,60 @@
 main {
   height: 100%;
   width: 100%;
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
   align-items: center;
 }
 
 .linha {
   border:solid;
   float: left;
-  height: 1100px;
+  height: 1000px;
 }
 
-.container {
+.container-sorteado {
   color: black;
   font-size: 35px;
   text-align: center;
   border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
   align-items: center;
+}
+
+.container-histórico {
+  color: black;
+  font-size: 35px;
+  text-align: center;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-left: 70px;
 }
 
 .destaque {
-  font-size: 9rem;
-  width: 170px;
+  font-size: 6.5rem;
+  width: 120px;
   color: white;
   background: #248f36;
   border-radius: 100%;
-}
-
-.sorteado-linha {
-  text-align: center;
+  box-shadow: 10px 8px rgb(158, 158, 158);
 }
 
 .tabela {
-  color: #a6a8aa;
   align-items: center;
   border-collapse: separate;
-  border-spacing: 100px 13px;
+  border-spacing: 85px 15px;
 }
 
 th {
-  font-size: 50px;
-  padding-block:  40px;
-  padding-inline: 40px;
+  font-size: 70px;
+  padding-block:  20px;
+  padding-inline: 20px;
   color: black;
   border-radius: 100%;
   background: #a6a8aa;
@@ -60,20 +73,22 @@ td {
   background: #dce0e4;
   color: #fff;
   text-align: center;
-  font-size: 40px;
-  padding-block:  5px;
-  padding-inline: 13px;
+  font-size: 45px;
+  padding-inline: 10px;
   border-radius: 100%;
+  box-shadow: 10px 8px rgb(158, 158, 158);
 }
 
 .bola-sorteada {
   background: #248f36;
   color: #fff;
   text-align: center;
-  font-size: 50px;
+  font-size: 45px;
   padding-block:  5px;
   padding-inline: 10px;
   border-radius: 100%;
+  transition: 1s;
+  box-shadow: 10px 8px rgb(158, 158, 158);
 }
 
 .footer {
@@ -89,7 +104,8 @@ input {
   border: solid;
   border-width: 1px;
   border-radius: 0.8rem;
-  width: 285px;
+  width: 100px;
+  height: 50px;
   padding-inline:  10px;
 
 }
@@ -103,6 +119,5 @@ form button {
   padding: 0.5rem;
   width: 10rem;
   box-shadow: 676e74;
-  cursor: pointer;
+  cursor:grab;
 }
-

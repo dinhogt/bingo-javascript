@@ -1,4 +1,5 @@
-
+let numeroSorteado = 0;    
+let elemento = document.getElementById(numeroSorteado);
 let numerosSorteados = [];
 let sorteado = document.getElementById('sorteado');
 let ultimo = document.getElementById('ultimo');
@@ -8,11 +9,9 @@ let antepenultimo = document.getElementById('antepenultimo');
 function escolher() {
  
     let numeroDigitado = parseInt(document.getElementById('numero').value);
-    let elemento = document.getElementById(numeroDigitado);
-    console.log(sorteado);
-    
+    elemento = document.getElementById(numeroDigitado);    
 
-    if(numeroDigitado == '' ) {
+    if (numeroDigitado == '') {
 
         alert('Digite ao menos um valor para preencher a cartela!');
 
@@ -29,17 +28,17 @@ function escolher() {
 
                 if (numeroDigitado < 10) {
 
-                    sorteado.textContent = '0'+numeroDigitado;
                     antepenultimo.textContent = penultimo.textContent;  
                     penultimo.textContent = ultimo.textContent;
                     ultimo.textContent = sorteado.textContent;
+                    sorteado.textContent = '0'+numeroDigitado;
 
                 } else {
-
-                    sorteado.textContent = numeroDigitado;
+                   
                     antepenultimo.textContent = penultimo.textContent;  
                     penultimo.textContent = ultimo.textContent;
-                    ultimo.textContent = sorteado.textContent;     
+                    ultimo.textContent = sorteado.textContent;  
+                    sorteado.textContent = numeroDigitado;   
                 
             }
 
@@ -51,38 +50,41 @@ function escolher() {
 
 function sortear() {
 
-    let numeroSorteado = Math.floor(Math.random() * (75 - 0 + 1) ) + 1;
-    
-    let elemento = document.getElementById(numeroSorteado);
+    numeroSorteado = Math.floor(Math.random() * (75 - 1) );    
+    elemento = document.getElementById(numeroSorteado);
 
-    if(numerosSorteados.includes(numeroSorteado) == true) {
+    while (elemento == null) {
 
-        numeroSorteado = Math.floor(Math.random() * (75 - 0 + 1) ) + 1; }
-        
-        else { 
+        numeroSorteado = Math.floor(Math.random() * (75 - 1) ); 
+        elemento = document.getElementById(numeroSorteado); }
+
+        if (numerosSorteados.includes(numeroSorteado)) {
+
+            numeroSorteado = Math.floor(Math.random() * (75 - 1) ); 
+            elemento = document.getElementById(numeroSorteado); } 
             
+            else {
+        
             numerosSorteados.push(numeroSorteado);
             elemento.className = 'bola-sorteada';
 
             if (numeroSorteado < 10) {
 
-                sorteado.textContent = '0'+numeroSorteado;
                 antepenultimo.textContent = penultimo.textContent;  
                 penultimo.textContent = ultimo.textContent;
                 ultimo.textContent = sorteado.textContent;
+                sorteado.textContent = '0'+numeroSorteado;
 
             } else {
 
-                sorteado.textContent = numeroSorteado;
                 antepenultimo.textContent = penultimo.textContent;  
                 penultimo.textContent = ultimo.textContent;
-                ultimo.textContent = sorteado.textContent;     
+                ultimo.textContent = sorteado.textContent;  
+                sorteado.textContent = numeroSorteado;   
             
         }
 
-    }   
-    
-    console.log(numerosSorteados);
+    }
 
 }
 
@@ -93,17 +95,14 @@ ultimo.textContent = '00';
 penultimo.textContent = '00';
 antepenultimo.textContent = '00';
 document.getElementById('numero').value = '';
+let controlador;
 
-for(let i = 0; i < numerosSorteados.length; i++) {
+for(let i=0; i < numerosSorteados.length; i++) {
 
-    let controlador = document.getElementById(numerosSorteados[i]);
-    controlador = document.getElementById(numerosSorteados[i]);
-    controlador = controlador.className='bola';
-
-    }
+    controlador = document.getElementById(numerosSorteados[i]); 
+    controlador.className = 'bola'; }   
 
     numerosSorteados = '';
-
     numerosSorteados = [];
 
 }
