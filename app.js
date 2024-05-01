@@ -1,13 +1,13 @@
 
 let numerosSorteados = [];
 let sorteado = document.getElementById('sorteado');
-let ultimo = document.getElementById('ultimo').textContent;
-let penultimo = document.getElementById('penultimo').textContent;
-let antepenultimo = document.getElementById('antepenultimo').textContent;
+let ultimo = document.getElementById('ultimo');
+let penultimo = document.getElementById('penultimo');
+let antepenultimo = document.getElementById('antepenultimo');
 
 function escolher() {
-
-    let numeroDigitado = document.getElementById('numero').value;
+ 
+    let numeroDigitado = parseInt(document.getElementById('numero').value);
     let elemento = document.getElementById(numeroDigitado);
     console.log(sorteado);
     
@@ -29,26 +29,82 @@ function escolher() {
 
                 if (numeroDigitado < 10) {
 
-                    sorteado.innerHTML = '0'+numeroDigitado;
+                    sorteado.textContent = '0'+numeroDigitado;
+                    antepenultimo.textContent = penultimo.textContent;  
+                    penultimo.textContent = ultimo.textContent;
+                    ultimo.textContent = sorteado.textContent;
 
                 } else {
 
-                sorteado.innerHTML = numeroDigitado; }
-
-                console.log(sorteado);                                        
+                    sorteado.textContent = numeroDigitado;
+                    antepenultimo.textContent = penultimo.textContent;  
+                    penultimo.textContent = ultimo.textContent;
+                    ultimo.textContent = sorteado.textContent;     
                 
             }
 
+        }                               
+                
     }
 
 }
 
 function sortear() {
 
+    let numeroSorteado = Math.floor(Math.random() * (75 - 0 + 1) ) + 1;
+    
+    let elemento = document.getElementById(numeroSorteado);
+
+    if(numerosSorteados.includes(numeroSorteado) == true) {
+
+        numeroSorteado = Math.floor(Math.random() * (75 - 0 + 1) ) + 1; }
+        
+        else { 
+            
+            numerosSorteados.push(numeroSorteado);
+            elemento.className = 'bola-sorteada';
+
+            if (numeroSorteado < 10) {
+
+                sorteado.textContent = '0'+numeroSorteado;
+                antepenultimo.textContent = penultimo.textContent;  
+                penultimo.textContent = ultimo.textContent;
+                ultimo.textContent = sorteado.textContent;
+
+            } else {
+
+                sorteado.textContent = numeroSorteado;
+                antepenultimo.textContent = penultimo.textContent;  
+                penultimo.textContent = ultimo.textContent;
+                ultimo.textContent = sorteado.textContent;     
+            
+        }
+
+    }   
+    
+    console.log(numerosSorteados);
 
 }
 
 function limpar() {
 
+sorteado.textContent = '00';
+ultimo.textContent = '00';
+penultimo.textContent = '00';
+antepenultimo.textContent = '00';
+document.getElementById('numero').value = '';
+
+for(let i = 0; i < numerosSorteados.length; i++) {
+
+    let controlador = document.getElementById(numerosSorteados[i]);
+    controlador = document.getElementById(numerosSorteados[i]);
+    controlador = controlador.className='bola';
+
+    }
+
+    numerosSorteados = '';
+
+    numerosSorteados = [];
 
 }
+
